@@ -1,0 +1,16 @@
+C:\Users\EV-02\source\repos\ISTE110game\ISTE110game\bin\Debug\net5.0\ISTE110game.exe
+C:\Users\EV-02\source\repos\ISTE110game\ISTE110game\bin\Debug\net5.0\ISTE110game.deps.json
+C:\Users\EV-02\source\repos\ISTE110game\ISTE110game\bin\Debug\net5.0\ISTE110game.runtimeconfig.json
+C:\Users\EV-02\source\repos\ISTE110game\ISTE110game\bin\Debug\net5.0\ISTE110game.runtimeconfig.dev.json
+C:\Users\EV-02\source\repos\ISTE110game\ISTE110game\bin\Debug\net5.0\ISTE110game.dll
+C:\Users\EV-02\source\repos\ISTE110game\ISTE110game\bin\Debug\net5.0\ref\ISTE110game.dll
+C:\Users\EV-02\source\repos\ISTE110game\ISTE110game\bin\Debug\net5.0\ISTE110game.pdb
+C:\Users\EV-02\source\repos\ISTE110game\ISTE110game\obj\Debug\net5.0\ISTE110game.csproj.AssemblyReference.cache
+C:\Users\EV-02\source\repos\ISTE110game\ISTE110game\obj\Debug\net5.0\ISTE110game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\EV-02\source\repos\ISTE110game\ISTE110game\obj\Debug\net5.0\ISTE110game.AssemblyInfoInputs.cache
+C:\Users\EV-02\source\repos\ISTE110game\ISTE110game\obj\Debug\net5.0\ISTE110game.AssemblyInfo.cs
+C:\Users\EV-02\source\repos\ISTE110game\ISTE110game\obj\Debug\net5.0\ISTE110game.csproj.CoreCompileInputs.cache
+C:\Users\EV-02\source\repos\ISTE110game\ISTE110game\obj\Debug\net5.0\ISTE110game.dll
+C:\Users\EV-02\source\repos\ISTE110game\ISTE110game\obj\Debug\net5.0\ref\ISTE110game.dll
+C:\Users\EV-02\source\repos\ISTE110game\ISTE110game\obj\Debug\net5.0\ISTE110game.pdb
+C:\Users\EV-02\source\repos\ISTE110game\ISTE110game\obj\Debug\net5.0\ISTE110game.genruntimeconfig.cache
