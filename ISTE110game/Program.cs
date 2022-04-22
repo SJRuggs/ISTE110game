@@ -9,15 +9,40 @@ namespace ISTE110game
         static void Main(string[] args)
         {
             PrintIntro();
-            switch (AskQuestion("Asking a Question?", new string[] { "option one", "option two", "option three" }))
+            
+            // question one
+            switch (AskQuestion("As you're browsing the online page of a local community,\n" +
+                                "you find someone spreading harmful rumors about someone\n" +
+                                "you know.", 
+                                new string[] { "Do nothing", 
+                                               "Report the account spreading rumors", 
+                                               "Let the victim and their family know, and let them handle it" }))
             {
-                case 1:
+                case 1: PrintText(new string[] { "The rumors about the victim were too harmful, and weren't dealt with.", 
+                                                 "After a couple months, the victim moved away."});
                     break;
 
-                case 2:
+                case 2: PrintText(new string[] { "You reported the account and it was banned the next day.", 
+                                                 "About a week later, you found another, recently made account\n" +
+                                                 "doing the exact same thing as the first."});
                     break;
 
-                case 3:
+                case 3: PrintText(new string[] { "You contacted the victim and they knew who it was.",
+                                                 "Next week, you see the account is banned, and the victim\n" +
+                                                 "thanks you and lets you know it was dealt with in person."});
+                    break;
+            }
+            
+            // question two
+            switch (AskQuestion("You find an embarrasing video of someone you don't know.\n" +
+                                "There are many rude comments on the post.", 
+                                new string[] { "Repost the video", 
+                                               "Comment something funny", 
+                                               "Comment and tell others it's not ok",
+                                               "Report the video"}))
+            {
+                case 1: PrintText(new string[] { "The rumors about the victim were too harmful, and weren't dealt with.", 
+                                                 "After a couple months, the victim moved away."});
                     break;
             }
         }
@@ -56,39 +81,52 @@ namespace ISTE110game
                 Thread.Sleep(3000);
 
                 // print answers
-                Console.Write("\nDo you...   ");
+                Console.WriteLine("\nDo you...   ");
                 Thread.Sleep(1000);
                 for (int i = 0; i < options.Length; i++)
                 {
-                    Console.Write("(" + (i + 1) + ") " + options[i].ToUpper());
+                    Console.WriteLine("(" + (i + 1) + ") " + options[i].ToUpper());
                     Thread.Sleep(1000);
-                    if (i != options.Length - 1)
-                    {
-                        Console.Write(",   ");
-                    }
-                    else
+                    if (i == options.Length - 1)
                     {
                         Console.Write("\n > ");
                     }
                 }
 
                 // grab answer
-                answer = Console.ReadLine();
+                answer = Console.ReadLine().ToUpper().Trim();
 
                 // run through all options
                 for (int i = 0; i < options.Length; i++)
                 {
-                    if (answer.ToUpper() == options[i].ToUpper() || (int.TryParse(answer, out int o) && o < options.Length + 1 && o != 0))
+                    if (answer == options[i].ToUpper())
                     {
                         // print bracket and return once acceptable answer is found
                         Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
-                        return i - 1;
+                        return i + 1;
+                    }
+                    if (int.TryParse(answer, out int o) && o < options.Length + 1 && o > 0)
+                    {
+                        // print bracket and return once acceptable answer is found
+                        Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
+                        return o;
                     }
                 }
 
                 // print error
                 Console.WriteLine(answer.ToUpper() + " is not an available option.");
             }
+        }
+
+        private static void PrintText(string[] texts)
+        {
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            foreach (string str in texts)
+            {
+                Console.WriteLine(str);
+                Thread.Sleep(3000);
+            }
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
         }
         #endregion
     }
