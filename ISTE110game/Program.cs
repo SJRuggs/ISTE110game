@@ -9,6 +9,10 @@ namespace ISTE110game
         static void Main(string[] args)
         {
             PrintIntro();
+
+            int peopleHelped = 0;
+            int peopleHurt = 0;
+            int karenPoints = 0;
             
             // question one
             switch (AskQuestion("As you're browsing the online page of a local community,\n" +
@@ -20,6 +24,7 @@ namespace ISTE110game
             {
                 case 1: PrintText(new string[] { "The rumors about the victim were too harmful, and weren't dealt with.", 
                                                  "After a couple months, the victim moved away."});
+                    peopleHurt++;
                     break;
 
                 case 2: PrintText(new string[] { "You reported the account and it was banned the next day.", 
@@ -30,21 +35,96 @@ namespace ISTE110game
                 case 3: PrintText(new string[] { "You contacted the victim and they knew who it was.",
                                                  "Next week, you see the account is banned, and the victim\n" +
                                                  "thanks you and lets you know it was dealt with in person."});
+                    peopleHelped++;
                     break;
             }
             
             // question two
             switch (AskQuestion("You find an embarrasing video of someone you don't know.\n" +
-                                "There are many rude comments on the post.", 
+                                "There are many rude comments on the post.",
                                 new string[] { "Repost the video", 
                                                "Comment something funny", 
                                                "Comment and tell others it's not ok",
                                                "Report the video"}))
             {
-                case 1: PrintText(new string[] { "The rumors about the victim were too harmful, and weren't dealt with.", 
-                                                 "After a couple months, the victim moved away."});
+                case 1: PrintText(new string[] { "You got a couple upvotes, and a couple laughs, but at what cost?" });
+                    peopleHurt++;
+                    break;
+
+                case 2:
+                    PrintText(new string[] { "You got a couple upvotes, and a couple laughs, but at what cost?" });
+                    peopleHurt++;
+                    break;
+
+                case 3:
+                    PrintText(new string[] { "You got a couple downvotes and rude comments, but the post didn't\n" +
+                                             "gain any more popularity." });
+                    peopleHelped++;
+                    break;
+
+                case 4:
+                    PrintText(new string[] { "You report the video, but nothing happens because" +
+                                             "\nit didn't break any rules, it was just embarrasing.?" });
+                    karenPoints += 100; // lol karen
                     break;
             }
+
+            // question three
+            switch (AskQuestion("You find an online account that seems to be owned\n" +
+                                "by a friend of yours, but they things they post are\n" +
+                                "very rude, and doesn't seem like your friend.",
+                                new string[] { "Do nothing",
+                                               "Talk to your friend"}))
+            {
+                case 1:
+                    PrintText(new string[] { "After a couple months, the account continues to post rude things\n" +
+                                             "and your friend moves away." });
+                    peopleHurt++;
+                    break;
+
+                case 2:
+                    PrintText(new string[] { "You find out it wasn't their account, then your friend reported it\n" +
+                                             "and got it banned." });
+                    peopleHelped++;
+                    break;
+            }
+
+            // question four
+            switch (AskQuestion("A group of people from your school is trying to bully you online.",
+                                new string[] { "Do nothing",
+                                               "Ask councelor or teacher for help",
+                                               "Ask family for help",
+                                               "Confront the bullies in person"}))
+            {
+                case 1:
+                    PrintText(new string[] { "After a few months of online harrassment, your self\n" +
+                                             "esteem drops, and you start doing badly in school, where\n" +
+                                             "you almost excelled before." });
+                    peopleHurt++;
+                    break;
+
+                case 2:
+                    PrintText(new string[] { "You ask your councelor for help, and they talk to the bullies.\n" +
+                                             "The harrassment stops for now, but you can see in their eyes\n" +
+                                             "that they're not done with you..." });
+                    break;
+
+                case 3:
+                    PrintText(new string[] { "You ask your family for help, and they do their best to support you.\n" +
+                                             "The harrassment doesn't stop, but you pull through." });
+                    break;
+
+                case 4:
+                    PrintText(new string[] { "You confront the bullies in person, and after showing some spine and\n" +
+                                             "standing up for yourself, the bullies back down, and the harrassment stops." });
+                    peopleHelped++;
+                    break;
+            }
+
+
+            // print results
+            Console.WriteLine("You managed to help {0} people, but hurt {1} people along the way.", peopleHelped, peopleHurt);
+
         }
         #endregion
 
